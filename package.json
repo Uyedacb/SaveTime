@@ -1,0 +1,25 @@
+{
+  "name": "trak",
+  "version": "1.0.0",
+  "description": "alexa skill for tracking activities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uyedacb/trak.git"
+  },
+  "keywords": [
+    "trak"
+  ],
+  "author": "\"Brian Uyeda <uyedacb@gmail.com> (uyeda.me\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dhttp://uyeda.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uyedacb/trak/issues"
+  },
+  "homepage": "https://github.com/Uyedacb/trak#readme",
+  "dependencies": {
+    "ask-sdk": "^2.0.7"
+  }
+}
