@@ -23,15 +23,22 @@ const addTimeIntentHandler = {
   },
   handle(handlerInput) {
     // insert code to update dynamoDB for user here
+    const activity = handlerInput.requestEnvelope.request.intent.slots.activity.value;
+    const time = handlerInput.requestEnvelope.request.intent.slots.time.value;
+    const speechText = `${time} has been added to ${activity}`
     // probably do an if statement to check if activity exists or if time is valid
     // and return some type of speechText error that reprompts the user to fix their mistake
     // return speechText that shows intent was handled
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .reprompt(speechText)
+      .withSimpleCard('Trak', speechText)
+      .getResponse();
   }
 }
 
 exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
-    addTimeIntentHandler)
-  .addErrorHandlers(ErrorHandler) // errorhandler does not exist
+    addTimeIntentHandler) // errorhandler does not exist
   .lambda();
