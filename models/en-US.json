@@ -1,0 +1,210 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "act track",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "addTimeIntent",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DURATION",
+                            "samples": [
+                                " {time}"
+                            ]
+                        },
+                        {
+                            "name": "activity",
+                            "type": "activity",
+                            "samples": [
+                                "{activity}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "add {time} to {activity}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "createActivityIntent",
+                    "slots": [
+                        {
+                            "name": "activity",
+                            "type": "activity"
+                        }
+                    ],
+                    "samples": [
+                        "I want to start tracking {activity}"
+                    ]
+                },
+                {
+                    "name": "retrieveActivityIntent",
+                    "slots": [
+                        {
+                            "name": "activity",
+                            "type": "activity"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "tell me my activities",
+                        "give me my activities for {date}",
+                        "tell me how I have been spending my time for the past {date}",
+                        "how long have I been doing {activity}",
+                        "How long have I been doing {activity} for {date} "
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "activity",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Exercise",
+                                "synonyms": [
+                                    "Exercising"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Work",
+                                "synonyms": [
+                                    "Working"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Eat",
+                                "synonyms": [
+                                    "Eating"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Transport",
+                                "synonyms": [
+                                    "Transportation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Learn",
+                                "synonyms": [
+                                    "Learning"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sleep",
+                                "synonyms": [
+                                    "Sleeping"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Entertainment"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "addTimeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DURATION",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.498288887742.713812403399"
+                            }
+                        },
+                        {
+                            "name": "activity",
+                            "type": "activity",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.498288887742.1230347668438"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "createActivityIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "activity",
+                            "type": "activity",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.498288887742.713812403399",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how long have you done {activity} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.498288887742.1230347668438",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what activity would you like to add time to?"
+                    }
+                ]
+            }
+        ]
+    }
+}
