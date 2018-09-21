@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Uyedacb/trak#readme",
   "dependencies": {
-    "ask-sdk": "^2.0.7"
+    "ask-sdk": "^2.0.7",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   }
 }

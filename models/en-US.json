@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "act track",
+            "invocationName": "save time",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -42,6 +42,10 @@
                         }
                     ],
                     "samples": [
+                        "add time to an activity",
+                        "place {time} on {activity}",
+                        "put {time} on {activity}",
+                        "did {time} ",
                         "add {time} to {activity}"
                     ]
                 },
@@ -58,7 +62,11 @@
                         }
                     ],
                     "samples": [
-                        "I want to start tracking {activity}"
+                        "create activity",
+                        "create {activity}",
+                        "remember {activity}",
+                        "remember {activity} for me",
+                        "start tracking {activity}"
                     ]
                 },
                 {
@@ -74,11 +82,39 @@
                         }
                     ],
                     "samples": [
-                        "tell me my activities",
+                        "what did I do today",
+                        "long I done {activity}",
+                        "long I did {activity} {date}",
+                        "long I did {activity} on {date}",
+                        "give me my activity log for {date}",
+                        "time for {activity}",
+                        "look at {activity}",
+                        "long I do {activity}",
+                        "what did I do {date}",
+                        "did I do on {date}",
+                        "what I did today",
                         "give me my activities for {date}",
-                        "tell me how I have been spending my time for the past {date}",
-                        "how long have I been doing {activity}",
-                        "How long have I been doing {activity} for {date} "
+                        "have been spending my time  {date}",
+                        "long have I been doing {activity}",
+                        "long have I been doing {activity} for {date} "
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "listActivitiesIntent",
+                    "slots": [],
+                    "samples": [
+                        "list my activities",
+                        "list all activities",
+                        "tell me my activities",
+                        "can track",
+                        "activities I can track",
+                        "what can I track",
+                        "what tasks can I track",
+                        "what activities can I track"
                     ]
                 }
             ],
@@ -88,55 +124,64 @@
                     "values": [
                         {
                             "name": {
-                                "value": "Exercise",
+                                "value": "relaxing",
                                 "synonyms": [
-                                    "Exercising"
+                                    "break",
+                                    "relaxation"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Work",
+                                "value": "exercise",
                                 "synonyms": [
-                                    "Working"
+                                    "exercising"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Eat",
+                                "value": "work",
                                 "synonyms": [
-                                    "Eating"
+                                    "working"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Transport",
+                                "value": "eating",
                                 "synonyms": [
-                                    "Transportation"
+                                    "eat"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Learn",
+                                "value": "transport",
                                 "synonyms": [
-                                    "Learning"
+                                    "transportation"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Sleep",
+                                "value": "learning",
                                 "synonyms": [
-                                    "Sleeping"
+                                    "learn"
                                 ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Entertainment"
+                                "value": "sleep",
+                                "synonyms": [
+                                    "sleeping"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "entertainment"
                             }
                         }
                     ]
