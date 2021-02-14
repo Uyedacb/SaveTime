@@ -8,5 +8,4 @@ and list activities that Alexa is currently tracking for them.
 Built in a Node.js environment using moment.js, ask-sdk, and request-promise.js. 
 Deployed on AWS Lambda.
 User data is stored in Amazon's Dynamo-Db with custom ids for security and easy access.
-Currently avaliable on Amazon's Alexa Skills Marketplace.
 
